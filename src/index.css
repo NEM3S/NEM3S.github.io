@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+  font-family: DMSans; /* set name */
+  src: url(../public/DMSans.ttf); /* url of the font */
+}
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: DMSans, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -49,6 +52,27 @@ button {
 button:hover {
   border-color: #646cff;
 }
+
+  
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom left in oklab,
+    oklch(55% 0.45 350) 0%,
+    oklch(95% 0.4 95) 100%
+  );
+}
+
+#grain {
+  width: 100vw;
+  height: 100vh;
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {

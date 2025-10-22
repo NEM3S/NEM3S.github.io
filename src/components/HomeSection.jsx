@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function HomeSection() {
   return (
     <div className="min-h-screen w-full bg-gray-950 text-white flex flex-col items-center justify-center">
     <motion.h1
-        className="text-6xl font-bold mb-8 ml-2 mr-2 text-center"
+        className="text-5xl sm:text-8xl lg:text-[9rem] font-bold mb-8 ml-2 mr-2 text-center"
         initial={{ opacity: 0, y: -1000 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -14,7 +14,7 @@ export default function HomeSection() {
           duration: 1.2,
         }}
       >
-        Mathis Hamet
+        Mathis H.
       </motion.h1>
 
       <motion.p

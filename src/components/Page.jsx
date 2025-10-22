@@ -1,16 +1,10 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function Page({ children, direction }) {
   const variants = {
-    enter: (direction) => ({
-      y: direction > 0 ? "100vh" : "-100vh",
-      opacity: 0,
-    }),
-    center: { y: 0, opacity: 1 },
-    exit: (direction) => ({
-      y: direction > 0 ? "-100vh" : "100vh",
-      opacity: 0,
-    }),
+    enter: (dir) => ({ y: dir > 0 ? 2000 : -2000, opacity: 0, filter: "blur(25px)" }),
+    center:      { y: 0, opacity: 1, filter: "blur(0px)" },
+    exit:  (dir) => ({ y: dir > 0 ? -2000 : 2000, opacity: 0, filter: "blur(25px)" }),
   };
 
   return (
@@ -22,9 +16,12 @@ export default function Page({ children, direction }) {
       exit="exit"
       custom={direction}
       transition={{
-        duration: 0.8,
-        ease: [0.6, 0.05, -0.01, 0.9],
-      }}
+          type: "spring",
+          stiffness: 50,
+          damping: 15,
+          visualDuration: 1.5,
+          duration: 0.2,
+        }}
     >
       {children}
     </motion.div>
