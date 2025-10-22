@@ -1,27 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Page from "./components/Page";
 import Header from "./components/Header";
 import HomeSection from "./components/HomeSection";
 import AboutSection from "./components/AboutSection";
+import "./utils/grained";
 
-var options = {
-  animate: true,
-  patternWidth: 400,
-  patternHeight: 400,
-  grainOpacity: 0.1,
-  grainDensity: 1,
-  grainChaos: 0.5,
-  grainSpeed: 5
-};
-
-grained("#grain", options);
 
 
 export default function App() {
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(0);
   const numberPages = 3;
+
+  useEffect(() => {
+      if (window.grained) {
+        const options = {
+          animate: true,
+          patternWidth: 400,
+          patternHeight: 400,
+          grainOpacity: 0.1,
+          grainDensity: 1,
+          grainChaos: 0.5,
+          grainSpeed: 5,
+        };
+        window.grained("#grain", options);
+      } else {
+        console.error("grained.js n’a pas été chargé correctement.");
+      }
+    }, []);
+
 
   function goNextPage() {
     setDirection(1);
