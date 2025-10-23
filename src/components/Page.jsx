@@ -9,7 +9,7 @@ export default function Page({ children, direction }) {
 
   return (
     <motion.div
-      className="absolute inset-0 flex flex-col items-center justify-center min-h-screen bg-gray-950 text-white"
+      className="absolute inset-0 flex flex-col items-center justify-center min-h-screen bg-transparent text-zinc-900 dark:text-white transition-colors duration-300"
       variants={variants}
       initial="enter"
       animate="center"

@@ -1,29 +1,28 @@
 import { motion } from "motion/react";
 
 export default function HomeSection() {
-  return (
-    <div className="min-h-screen w-full bg-gray-950 text-white flex flex-col items-center justify-center">
-    <motion.h1
-        className="text-5xl sm:text-8xl lg:text-[9rem] font-bold mb-8 ml-2 mr-2 text-center"
-        initial={{ opacity: 0, y: -1000 }}
-        animate={{ opacity: 1, y: 0 }}
+  return  (
+    <div className="min-h-screen w-full bg-white dark:bg-zinc-950 flex flex-col items-center justify-center ml-2 mr-2">
+      <motion.h1
+        className="text-7xl sm:text-8xl lg:text-[9rem] xl:text-[11rem] font-[550] hover:font-[1000] transition-[font-weight] duration-[1s] ease-[cubic-bezier(.23,0,.32,1)] cursor-default mb-8 ml-2 mr-2 text-center"
+        initial={{ opacity: 0, scale: 15, filter: "blur(60px)" }}
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
         transition={{
-          type: "spring",
-          stiffness: 50,
-          damping: 15,
-          duration: 1.2,
+          duration: 1.5,
+          ease: [0.16,0.48,0.01,0.98],
         }}
+        whileHover={{ scaleX: 1.1}}
       >
         Mathis H.
       </motion.h1>
 
       <motion.p
-        className="text-2xl text-gray-400"
+        className="text-2xl text-zinc-700 dark:text-zinc-300 ml-2 mr-2 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
       >
-        .NET Developper
+        .NET Developper&nbsp; ○ &nbsp;IT Student
       </motion.p>
 
 
