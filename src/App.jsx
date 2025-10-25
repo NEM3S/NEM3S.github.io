@@ -99,8 +99,18 @@ export default function App() {
   return (
     <div className="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white overflow-hidden relative w-full h-screen flex flex-col items-center justify-center transition-colors duration-300">
       <div id="grain" className="absolute inset-0 z-50 pointer-events-none"></div>
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-48 bg-gradient-to-b dark:from-amber-/10 from-blue-950/20 to-transparent z-0" />
+      <div className="pointer-events-none absolute top-0 left-0 w-full h-48 bg-gradient-to-b dark:from-amber-800/10 from-blue-950/20 to-transparent z-0" />
       <div className="pointer-events-none absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t dark:from-amber-800/10 from-blue-950/20 to-transparent z-0" />
+      {/* Glow dynamique ultra smooth */}
+      <div
+        className="pointer-events-none absolute w-[1200px] h-[1200px] rounded-full blur-[200px] opacity-20
+                  bg-gradient-to-br from-blue-900/50 via-cyan-700/40 to-sky-600/40
+                  dark:from-amber-900/70 dark:via-orange-600/30 dark:to-red-500/80 dark:opacity-10
+                  animate-glow z-0"
+        style={{
+          animation: "glowMove 25s ease-in-out infinite",
+        }}
+      ></div>
 
       <Header theme={theme} onToggleTheme={toggleTheme} onPageChanged={onPageChanged} />
       <AnimatePresence mode="popLayout" custom={direction}>
