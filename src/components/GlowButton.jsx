@@ -17,14 +17,14 @@ export default function GlowButton({ children, onClick, className = "" }) {
       onClick={onClick}
       className={`btn group overflow-hidden active:grayscale ${className}`}
       whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.98 }}
+      whileTap={{ scale: 0.95 }}
       onMouseMove={handleMove}
     >
       {/* Glow animé */}
       <span
         className="pointer-events-none absolute w-[200%] h-[200%] 
                    rounded-full bg-gradient-to-r from-blue-200/40 to-blue-400/10 dark:from-orange-400/40 dark:to-orange-200/10 blur-2xl opacity-0 
-                   group-hover:opacity-100 transition-opacity duration-300 ease-out"
+                   group-hover:opacity-50 transition-opacity duration-300 ease-out"
         style={{ top: pos.y - 100, left: pos.x - 100 }}
       ></span>
 

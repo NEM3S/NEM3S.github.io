@@ -4,8 +4,8 @@ import Page from "./components/Page";
 import Header from "./components/Header";
 import HomeSection from "./components/HomeSection";
 import AboutSection from "./components/AboutSection";
-import "./utils/grained";
 import GlowButton from "./components/GlowButton";
+import Background from "./components/Background";
 
 const THEME_KEY = "preferred-theme";
 
@@ -27,22 +27,6 @@ export default function App() {
       : "light";
   });
   const numberPages = 3;
-
-  useEffect(() => {
-    if (window.grained) {
-      const options = {
-        animate: true,
-        patternWidth: 250,
-        patternHeight: 250,
-        grainWidth: 1.02,
-        grainHeight: 1.02,
-        grainOpacity: 0.05,
-      };
-      window.grained("#grain", options);
-    } else {
-      console.error("grained.js n'a pas ete charge correctement.");
-    }
-  }, []);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -98,24 +82,15 @@ export default function App() {
 
   return (
     <div className="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white overflow-hidden relative w-full h-screen flex flex-col items-center justify-center transition-colors duration-300">
-      <div id="grain" className="absolute inset-0 z-50 pointer-events-none"></div>
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-48 bg-gradient-to-b dark:from-amber-800/10 from-blue-950/20 to-transparent z-0" />
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t dark:from-amber-800/10 from-blue-950/20 to-transparent z-0" />
-      {/* Glow dynamique ultra smooth */}
-      <div
-        className="pointer-events-none absolute w-[1200px] h-[1200px] rounded-full blur-[200px] opacity-20
-                  bg-gradient-to-br from-blue-900/50 via-cyan-700/40 to-sky-600/40
-                  dark:from-amber-900/70 dark:via-orange-600/30 dark:to-red-500/80 dark:opacity-10
-                  animate-glow z-0"
-        style={{
-          animation: "glowMove 25s ease-in-out infinite",
-        }}
-      ></div>
+      
+      <Background />
 
       <Header theme={theme} onToggleTheme={toggleTheme} onPageChanged={onPageChanged} />
+
       <AnimatePresence mode="popLayout" custom={direction}>
         {pages[page]}
       </AnimatePresence>
+
       {page < numberPages - 1 && (
         <GlowButton
           className="btn bottom-6 fixed
@@ -128,10 +103,10 @@ export default function App() {
           {page === 1 ? "Continuer" : "Explorer"}
         </GlowButton>
       )}
+
       {page > 0 && (
         <GlowButton
-          className="btn top-24 fixed
-          sm:top-28"
+          className="btn top-28 sm:top-32 fixed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -140,6 +115,7 @@ export default function App() {
           Retour
         </GlowButton>
       )}
+
     </div>
   );
 }

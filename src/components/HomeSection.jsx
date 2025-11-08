@@ -5,11 +5,12 @@ export default function HomeSection() {
     <div className="min-h-screen w-full flex flex-col items-center justify-center ml-2 mr-2">
       <motion.h1
         className="text-7xl sm:text-8xl lg:text-[9rem] xl:text-[11rem] font-[550] hover:font-[900] transition-[font-weight] duration-[1s] ease-[cubic-bezier(.23,0,.32,1)] cursor-default mb-8 ml-2 mr-2 text-center"
-        initial={{ opacity: 0, scale: 15, filter: "blur(60px)" }}
-        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        initial={{ opacity: 0, scale: 10, y: -1000, filter: "blur(120px)" }}
+        animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
         transition={{
           duration: 1.5,
           ease: [0.16,0.48,0.01,0.98],
+          delay: 0.2
         }}
         whileHover={{ scaleX: 1.1}}
       >
