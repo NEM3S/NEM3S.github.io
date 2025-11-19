@@ -63,10 +63,28 @@ export default function AboutSection({ direction }) {
           title="Compétences"
           direction={direction}
         >
-          <div className="w-24 h-20 flex justify-center items-center rounded-lg border border-zinc-800 hover:scale-105 hover:shadow-md hover:shadow-cyan-500/40 transition-all duration-300"> 
-            <img src="src/assets/react.svg" className="w-full flex-shrink-0 p-5" alt="react" />
-          </div>
-          
+          <div className="flex flex-row flex-wrap gap-4">
+            <div className="h-14 p-5 gap-5 flex justify-center items-center rounded-lg border border-zinc-800 hover:scale-105 hover:shadow-md hover:shadow-purple-500/40 transition-all duration-300"> 
+              <img src="/assets/C_sharp.svg" className="h-10 flex-shrink-0" alt="react" />
+              <p className="">C#</p>
+            </div>
+            <div className="h-14 p-5 gap-5 flex justify-center items-center rounded-lg border border-zinc-800 hover:scale-105 hover:shadow-md hover:shadow-cyan-500/40 transition-all duration-300"> 
+              <img src="/assets/react.svg" className="h-9 flex-shrink-0" alt="react" />
+              <p className="">React</p>
+            </div>
+            <div className="h-14 p-5 gap-5 flex justify-center items-center rounded-lg border border-zinc-800 hover:scale-105 hover:shadow-md hover:shadow-blue-500/40 transition-all duration-300"> 
+              <img src="/assets/C++_Logo.svg" className="h-10 flex-shrink-0" alt="react" />
+              <p className="">C++</p>
+            </div>
+            <div className="h-14 p-5 gap-5 flex justify-center items-center rounded-lg border border-zinc-800 hover:scale-105 hover:shadow-md hover:shadow-blue-400/40 transition-all duration-300"> 
+              <img src="/assets/Typescript_logo.svg" className="h-9 flex-shrink-0" alt="react" />
+              <p className="">TypeScript</p>
+            </div>
+            <div className="h-14 p-5 gap-5 flex justify-center items-center rounded-lg border border-zinc-800 hover:scale-105 hover:shadow-md hover:shadow-orange-400/40 transition-all duration-300"> 
+              <img src="/assets/MySql_logo.svg" className="h-9 flex-shrink-0" alt="react" />
+              <p className="">MySQL</p>
+            </div>
+          </div>          
         </InfoCard>
       
 
