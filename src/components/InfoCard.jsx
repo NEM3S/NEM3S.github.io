@@ -13,7 +13,7 @@ export default function InfoCard({ title, children }) {
       }}
 
       whileHover={{
-        y: -10,
+        y: -5,
         transition: {
           y: { duration: 0.3, ease: [0.80,-1.2,.68,1], }
         }

@@ -136,6 +136,12 @@ button:hover {
            bg-white/10 dark:bg-white/10 text-zinc-900 dark:text-white 
            shadow-sm active:scale-95 backdrop-blur-[7px];
   }
+
+  @media screen and (height < 700px) {
+    .btn {
+      @apply h-12;
+    }
+  }
 }
 
 @keyframes glowMove {

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import Page from "./components/Page";
+import Page from "./views/Page";
 import Header from "./components/Header";
-import HomeSection from "./components/HomeSection";
-import AboutSection from "./components/AboutSection";
+import HomeSection from "./views/HomeSection";
+import AboutSection from "./views/AboutSection";
 import GlowButton from "./components/GlowButton";
 import Background from "./components/Background";
 
