@@ -1,65 +1,33 @@
-import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
+import { AnimatePresence } from "motion/react";
 import Page from "./views/Page";
 import Header from "./components/Header";
 import HomeSection from "./views/HomeSection";
 import AboutSection from "./views/AboutSection";
 import GlowButton from "./components/GlowButton";
 import Background from "./components/Background";
-
-const THEME_KEY = "preferred-theme";
+import { useTheme } from "./utils/AppThemeController";
 
 export default function App() {
+  const { theme, toggleTheme } = useTheme();
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [theme, setTheme] = useState(() => {
-    if (typeof window === "undefined") {
-      return "dark";
-    }
 
-    const stored = window.localStorage.getItem(THEME_KEY);
-    if (stored === "light" || stored === "dark") {
-      return stored;
-    }
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
   const numberPages = 3;
-
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-
-    const isDark = theme === "dark";
-    document.documentElement.classList.toggle("dark", isDark);
-    document.body.classList.toggle("dark", isDark);
-
-    window.localStorage.setItem(THEME_KEY, theme);
-    console.log("Applied theme:", theme);
-  }, [theme]);
-
 
   function goNextPage() {
     setDirection(1);
-    setPage((prev) => prev + 1);
+    setPage(prev => prev + 1);
   }
 
   function goPreviousPage() {
     setDirection(-1);
-    setPage((prev) => prev - 1);
+    setPage(prev => prev - 1);
   }
 
   function onPageChanged(page) {
-    setPage(page);
     setDirection(0);
-  }
-
-  function toggleTheme() {
-    setTheme(prev => {
-      const next = prev === "dark" ? "light" : "dark";
-      return next;
-    });
+    setPage(page);
   }
 
 
@@ -81,7 +49,8 @@ export default function App() {
   ];
 
   return (
-    <div className="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white overflow-hidden relative w-full h-screen flex flex-col items-center justify-center transition-colors duration-300">
+    <div className="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white overflow-hidden
+      relative w-full h-screen flex flex-col items-center justify-center transition-colors duration-300">
       
       <Background />
 
@@ -93,7 +62,7 @@ export default function App() {
 
       {page < numberPages - 1 && (
         <GlowButton
-          className="btn bottom-6 fixed
+          className="btn-back-continue bottom-6 fixed
           sm:bottom-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -106,7 +75,7 @@ export default function App() {
 
       {page > 0 && (
         <GlowButton
-          className="btn top-28 sm:top-32 fixed"
+          className="btn-back-continue top-28 sm:top-32 fixed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}

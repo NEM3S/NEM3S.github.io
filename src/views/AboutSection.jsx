@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import InfoCard from "../components/InfoCard";
 import Skill from "../models/Skill";
 import SkillCard from "../components/SkillCard";
+import ExperienceTimeline from "../components/ExperienceTimeline";
 
 export default function AboutSection({ direction }) {
 
@@ -115,27 +116,11 @@ export default function AboutSection({ direction }) {
           </div>            
         </InfoCard>
       
-
         <InfoCard
           title="Expériences Pro."
           direction={direction}
         >
-          <ul className="text-zinc-400 text-sm flex flex-col gap-2">
-            <li className="flex justify-left items-left sm:justify-between flex-col relative bg-transparent backdrop-blur-[1px] border border-zinc-800 rounded-xl p-6 w-full text-left shadow-md">
-              <h4 className="text-xl text-center sm:text-left font-bold text-zinc-900 dark:text-white">Stage - Syensqo Tavaux
-                <p className="text-zinc-600 dark:text-zinc-400 text-sm">janv. 2025-mars. 2025</p></h4>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm mt-4">J'ai réalisé un stage de 9 semaines au sein de l'équipe digitale de l'usine chimique Syensqo à Tavaux.</p>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm mt-2">Pendant ce stage, j'ai développé plusieurs applications mobiles destinées au secteur de la fabrication,
-                puis conçu un tableau de bord centralisant les données qu'elles recueillaient,
-                afin d'offrir une visualisation claire et synthétique des plans de contrôle de sécurité.</p>
-            </li>
-            <li className="flex justify-left items-left sm:justify-between flex-col relative bg-transparent backdrop-blur-[1px] border border-zinc-800 rounded-xl p-6 w-full text-left shadow-md">
-              <h4 className="text-xl text-center sm:text-left font-bold text-zinc-900 dark:text-white">Stage - Actemium Tavaux
-                <p className="text-zinc-600 dark:text-zinc-400 text-sm">déc. 2019</p></h4>
-                <p className="text-zinc-600 dark:text-zinc-400 text-sm mt-4">J'ai réalisé un stage d'une semaines durant mon année de troisième au sein du bureau d'étude à Actemium Tavaux.</p>
-                <p className="text-zinc-600 dark:text-zinc-400 text-sm mt-2">Ce stage visait à me familiariser avec le monde professionnel. Bien que sa durée limitée ne m'ait pas permis d'en découvrir tous les aspects, il m'a offert une première expérience précieuse et formatrice.</p>
-            </li>
-          </ul>
+          <ExperienceTimeline/>
         </InfoCard>
 
         <InfoCard
@@ -145,14 +130,16 @@ export default function AboutSection({ direction }) {
 
           <ul className="text-zinc-400 text-sm flex flex-col gap-2">
         
-            <li className="flex justify-center items-center sm:justify-between flex-col sm:flex-row relative bg-transparent backdrop-blur-[1px] border border-zinc-800 rounded-xl p-6 w-full text-left shadow-md">
-              <h4 className="text-xl text-center sm:text-left font-bold text-zinc-900 dark:text-white">BUT Informatique
-                <p className="text-zinc-600 dark:text-zinc-400 text-sm">2023-2026</p></h4>
+            <li className="studies-li">
+              <h4>BUT Informatique
+                <p>2023-2026</p>
+              </h4>
               <span className="animate-pulse text-zinc-500 dark:text-zinc-400 text-lg font-bold">En cours</span>
             </li>
-            <li className="flex justify-center items-center sm:justify-between flex-col sm:flex-row relative bg-transparent backdrop-blur-[1px] border border-zinc-800 rounded-xl p-6 w-full text-left shadow-md">
-              <h4 className="text-xl text-center sm:text-left font-bold text-zinc-900 dark:text-white">BAC Maths/NSI
-                <p className="text-zinc-600 dark:text-zinc-400 text-sm">2020-2023 - Mention : <span className="text-amber-600 text-sm dark:text-amber-400">Très bien</span></p></h4>
+            <li className="studies-li">
+              <h4>BAC Maths/NSI
+                <p>2020-2023 - Mention : <span className="text-amber-600 text-sm dark:text-amber-400">Très bien</span></p>
+              </h4>
               <span className="text-lg font-bold text-green-800">Terminé</span>
             </li>
           </ul>

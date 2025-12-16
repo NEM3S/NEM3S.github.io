@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
+import "../styles/glow-button.css";
 
 export default function GlowButton({ children, onClick, className = "" }) {
   const [pos, setPos] = useState({ x: 0, y: 0 });
