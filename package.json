@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "framer-motion": "^12.23.26",
     "grained": "^0.0.2",
     "motion": "^12.23.24",
     "react": "^19.1.1",

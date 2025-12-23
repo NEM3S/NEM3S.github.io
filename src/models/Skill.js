@@ -21,7 +21,7 @@ export default class Skill {
             case "purple":
                 return "hover:shadow-purple-500/40";
             case "blue":
-                return "hover:shadow-blue-400/40";
+                return "hover:shadow-blue-500/40";
             case "yellow":
                 return "hover:shadow-yellow-500/40";
             case "orange":
