@@ -14,7 +14,7 @@ export default function HomeSection() {
         }}
         whileHover={{ scaleX: 1.1}}
       >
-        Mathis
+        Mathis H.
       </motion.h1>
 
       <motion.p
