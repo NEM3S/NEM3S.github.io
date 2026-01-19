@@ -1,0 +1,44 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.embla {
+  width: 100%;
+  margin: auto;
+  margin-top: 2em;
+  --slide-height: 24rem;
+  --slide-spacing: 1vw;
+  --slide-size: 45%;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 42em;
+  padding-left: var(--slide-spacing);
+  margin-left: var(--slide-spacing);
+  margin-right: var(--slide-spacing);
+}
+
+@layer components {
+.embla__content {
+    @apply hover:scale-[102%] rounded-xl transition-all bg-blue-500 hover:bg-blue-600 dark:bg-orange-500 dark:hover:bg-orange-600 transition-all;
+  }
+}
+.embla__slide__number {
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  border-radius: 1.8rem;
+  font-size: 4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--slide-height);
+  user-select: none;
+}

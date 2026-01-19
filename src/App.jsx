@@ -4,6 +4,7 @@ import Page from "./views/Page";
 import Header from "./components/Header";
 import HomeSection from "./views/HomeSection";
 import AboutSection from "./views/AboutSection";
+import ProjectSection from "./views/ProjectSection";
 import GlowButton from "./components/GlowButton";
 import Background from "./components/Background";
 import { useTheme } from "./utils/AppThemeController";
@@ -41,11 +42,8 @@ export default function App() {
     </Page>,
 
     <Page key="3" direction={direction}>
-      <h1 className="text-5xl font-bold mb-6">Mes projets</h1>
-      <p className="text-zinc-600 dark:text-gray-400 mb-10 max-w-xl text-center">
-        Quelques-unes de mes creations les plus recentes.
-      </p>
-    </Page>,
+      <ProjectSection />
+    </Page>
   ];
 
   return (
@@ -54,7 +52,7 @@ export default function App() {
       
       <Background />
 
-      <Header theme={theme} onToggleTheme={toggleTheme} onPageChanged={onPageChanged} />
+      <Header theme={theme} onToggleTheme={toggleTheme} onPageChanged={onPageChanged}/>
 
       <AnimatePresence mode="popLayout" custom={direction}>
         {pages[page]}

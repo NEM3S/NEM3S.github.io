@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 export default function Header({ theme, onToggleTheme, onPageChanged }) {
   return (
     <motion.header
-      className="fixed h-20 top-5 w-[90%] md:w-[60%] rounded-xl flex items-center justify-center z-50 bg-white/60 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-white/10 transition-colors duration-300 backdrop-blur-[7px]"
+      className="fixed h-20 top-5 max-w-[40em] w-[calc(100%-4rem)] rounded-xl flex items-center justify-center z-50 bg-white/60 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-white/10 transition-colors duration-300 backdrop-blur-[7px]"
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeInOut", delay: 1.3 }}
