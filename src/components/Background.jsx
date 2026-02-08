@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 export default function Background() {
   return (
     <div>
-        <div class="grain" className="grain absolute inset-0 z-50 pointer-events-none"></div>
+        <div class="grain" className="grain absolute inset-0 z-0 pointer-events-none"></div>
             {/* <div className="pointer-events-none absolute top-0 left-0 w-full h-48 bg-gradient-to-b dark:from-amber-800/10 from-blue-950/20 to-transparent z-0" />
             <div className="pointer-events-none absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t dark:from-amber-800/10 from-blue-950/20 to-transparent z-0" /> */}
             {/* Glow dynamique ultra smooth */}

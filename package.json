@@ -11,14 +11,17 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "embla-carousel-wheel-gestures": "^8.1.0",
     "framer-motion": "^12.23.26",
     "grained": "^0.0.2",
+    "gsap": "^3.14.2",
     "motion": "^12.23.24",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "split-type": "^0.3.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

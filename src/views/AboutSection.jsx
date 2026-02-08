@@ -137,17 +137,17 @@ export default function AboutSection({ direction }) {
 
           <ul className="text-zinc-400 text-sm flex flex-col gap-2">
 
-            <li className="studies-li">
-              <h4>BUT Informatique
+            <li className="studies-li group/studies">
+              <h4 className="sm:group-hover/studies:pl-2 sm:group-hover/studies:pb-0 group-hover/studies:pb-2 transition-all">BUT Informatique
                 <p>2023-2026</p>
               </h4>
-              <span className="animate-pulse text-zinc-500 dark:text-zinc-400 text-lg font-bold">En cours</span>
+              <span className="sm:group-hover/studies:pr-2 transition-all animate-pulse text-zinc-500 dark:text-zinc-400 text-lg font-bold">En cours</span>
             </li>
-            <li className="studies-li">
-              <h4>BAC Maths/NSI
+            <li className="studies-li group/studies">
+              <h4 className="sm:group-hover/studies:pl-2 sm:group-hover/studies:pb-0 group-hover/studies:pb-2 transition-all">BAC Maths/NSI
                 <p>2020-2023 - Mention : <span className="text-amber-600 text-sm dark:text-amber-400">Très bien</span></p>
               </h4>
-              <span className="text-lg font-bold text-green-800">Terminé</span>
+              <span className="sm:group-hover/studies:pr-2 transition-all text-lg font-bold text-green-800">Terminé</span>
             </li>
           </ul>
         </InfoCard>

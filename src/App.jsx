@@ -42,7 +42,7 @@ export default function App() {
     </Page>,
 
     <Page key="3" direction={direction}>
-      <ProjectSection />
+      <ProjectSection direction={direction}/>
     </Page>
   ];
 

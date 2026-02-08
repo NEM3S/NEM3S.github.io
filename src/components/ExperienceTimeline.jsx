@@ -14,7 +14,7 @@ export default function ExperienceTimeline() {
     {
       title: "Stage - Actemium Tavaux",
       date: "déc. 2019",
-      description: [`J'ai réalisé un stage d'une semaine durant mon année de troisième au sein du bureau d'étude à Actemium Tavaux.`,
+      description: [`J'ai réalisé un stage d'une semaine durant mon année de troisième au sein du bureau d'étude Actemium à Tavaux.`,
         `Ce stage visait à me familiariser avec le monde professionnel. Bien que sa durée limitée ne m'ait pas permis d'en découvrir tous les aspects, il m'a offert une première expérience précieuse et formatrice.`],
     },
   ];
@@ -34,7 +34,7 @@ export default function ExperienceTimeline() {
 
             {/* Contenu */}
             <div className="flex justify-left items-left sm:justify-between flex-col relative bg-transparent pl-6 w-full text-left">
-              <h4 className="group-hover/experience:translate-x-2 text-xl text-center sm:text-left font-bold text-zinc-900 dark:text-white duration-300">{exp.title}</h4>
+              <h4 className="group-hover/experience:translate-x-2 text-xl text-left font-bold text-zinc-900 dark:text-white duration-300">{exp.title}</h4>
               <p className="group-hover/experience:translate-x-1 text-sky-600 dark:text-yellow-700 text-sm mb-2 font-bold duration-300">
                 {exp.date}
               </p>

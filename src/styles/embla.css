@@ -42,3 +42,31 @@
   height: var(--slide-height);
   user-select: none;
 }
+
+/* Mobile */
+@media (max-width: 640px) {
+  .embla {
+    --slide-size: 100%;
+    --slide-spacing: 4vw;
+    --slide-height: 28rem; /* ajuste si tu veux + de hauteur */
+  }
+
+  .embla__slide {
+    min-width: 0;        /* IMPORTANT : supprime le blocage */
+    width: 100%;
+  }
+
+  .embla__slide__number {
+    height: var(--slide-height);
+  }
+}
+
+@media (max-width: 1024px) {
+  .embla {
+    --slide-size: 80%;
+  }
+
+  .embla__slide {
+    min-width: 0;
+  }
+}
