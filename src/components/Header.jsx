@@ -78,37 +78,22 @@ export default function Header({ theme, onToggleTheme, onPageChanged }) {
       </div>
 
       {/* TOGGLE THEME (inchangé) */}
-      <div className="absolute right-8">
-        <label className="theme">
-          <input
-            type="checkbox"
-            defaultChecked={theme !== "dark"}
-            className="input"
-            onClick={onToggleTheme}
-          />
-          <svg
-            className="icon icon-sun"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="24"
-          >
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" x2="12" y1="1" y2="3"></line>
-            <line x1="12" x2="12" y1="21" y2="23"></line>
-            <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
-            <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
-            <line x1="1" x2="3" y1="12" y2="12"></line>
-            <line x1="21" x2="23" y1="12" y2="12"></line>
-            <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
-            <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+      <div className="absolute right-6">
+        <input class="peer sr-only" id="theme" type="checkbox"
+              defaultChecked={theme !== "dark"}
+              className="input"
+              onClick={onToggleTheme} />
+
+        <label for="theme" class="theme-toggle" data-light="light" data-dark="dark">
+          <svg id="light" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
           </svg>
-          <svg className="icon icon-moon" viewBox="0 0 24 24">
-            <path d="m12.3 4.9c.4-.2.6-.7.5-1.1s-.6-.8-1.1-.8c-4.9.1-8.7 4.1-8.7 9 0 5 4 9 9 9 3.8 0 7.1-2.4 8.4-5.9.2-.4 0-.9-.4-1.2s-.9-.2-1.2.1c-1 .9-2.3 1.4-3.7 1.4-3.1 0-5.7-2.5-5.7-5.7 0-1.9 1.1-3.8 2.9-4.8zm2.8 12.5c.5 0 1 0 1.4-.1-1.2 1.1-2.8 1.7-4.5 1.7-3.9 0-7-3.1-7-7 0-2.5 1.4-4.8 3.5-6-.7 1.1-1 2.4-1 3.8-.1 4.2 3.4 7.6 7.6 7.6z"></path>
+
+          <svg id="dark" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
           </svg>
         </label>
       </div>
@@ -117,7 +102,7 @@ export default function Header({ theme, onToggleTheme, onPageChanged }) {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="sm:hidden absolute top-[6rem] z-60 left-0 right-0 mx-auto max-w-[40em] w-full rounded-xl bg-white/70 dark:bg-zinc-800/60 border border-zinc-200/60 dark:border-white/10 backdrop-blur-[10px] overflow-hidden transition-colors duration-300"
+            className="sm:hidden absolute top-[6rem] z-60 left-0 right-0 mx-auto max-w-[40em] w-full rounded-xl bg-white/95 dark:bg-zinc-900/95 border border-zinc-200/60 dark:border-white/10 backdrop-blur-[10px] overflow-hidden transition-colors duration-300"
             initial={{ opacity: 0, y: -20, scale: 1 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 1 }}

@@ -10,7 +10,7 @@ export default function ProjectSection({ direction }) {
 
     const [emblaRef, emblaApi] = useEmblaCarousel();
     return (
-        <div className=" pt-48 sm:pt-56 pb-24 w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent  text-zinc-900 dark:text-white transition-colors duration-300">
+        <div className="flex flex-col pt-48 sm:pt-56 pb-24 w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent  text-zinc-900 dark:text-white transition-colors duration-300">
             <div className="pl-10 pr-10 mb-16 flex flex-col items-center justify-start">
                 <motion.h1
                     className="text-5xl font-bold mb-10 self-center"

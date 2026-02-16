@@ -4,7 +4,7 @@ import { useRef, useLayoutEffect, useState } from "react";
 
 export default function HomeSection() {
   const containerRef = useRef(null);
-  const [radius, setRadius] = useState(300);
+  const [radius, setRadius] = useState(200);
 
   useLayoutEffect(() => {
     if (!containerRef.current) return;
@@ -38,7 +38,7 @@ export default function HomeSection() {
         <VariableProximity
           label="Mathis H."
           className="variable-proximity-demo text-7xl sm:text-8xl lg:text-[9rem] xl:text-[11rem] font-[550] hover:font-[900] transition-[font-weight] duration-[1s] ease-[cubic-bezier(.23,0,.32,1)] cursor-default mb-8 text-center"
-          fromFontVariationSettings="'wght' 200, 'opsz' 9"
+          fromFontVariationSettings="'wght' 350, 'opsz' 9"
           toFontVariationSettings="'wght' 900, 'opsz' 18"
           containerRef={containerRef}
           radius={radius}

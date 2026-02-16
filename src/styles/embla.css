@@ -5,8 +5,7 @@
 .embla {
   width: 100%;
   margin: auto;
-  margin-top: 2em;
-  --slide-height: 24rem;
+  --slide-height: 28rem;
   --slide-spacing: 1vw;
   --slide-size: 45%;
 }
@@ -48,7 +47,7 @@
   .embla {
     --slide-size: 100%;
     --slide-spacing: 4vw;
-    --slide-height: 28rem; /* ajuste si tu veux + de hauteur */
+    --slide-height: 28rem;
   }
 
   .embla__slide {
