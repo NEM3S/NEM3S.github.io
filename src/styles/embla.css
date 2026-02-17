@@ -4,10 +4,10 @@
 
 .embla {
   width: 100%;
-  margin: auto;
+  margin-top: min(8vh, 16vw);
   --slide-height: 28rem;
   --slide-spacing: 1vw;
-  --slide-size: 45%;
+  --slide-size: 35%;
 }
 .embla__viewport {
   overflow: hidden;
@@ -27,12 +27,14 @@
 
 @layer components {
 .embla__content {
-    @apply hover:scale-[102%] rounded-xl transition-all bg-blue-500 hover:bg-blue-600 dark:bg-orange-500 dark:hover:bg-orange-600 transition-all;
+    @apply hover:scale-[102%] rounded-2xl transition-all bg-blue-500  hover:bg-blue-600  dark:bg-orange-500 dark:hover:bg-orange-600 transition-all;
+    
   }
 }
-.embla__slide__number {
+.embla__slide__content {
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
   border-radius: 1.8rem;
+  padding: 8px;
   font-size: 4rem;
   font-weight: 600;
   display: flex;
@@ -55,7 +57,7 @@
     width: 100%;
   }
 
-  .embla__slide__number {
+  .embla__slide__content {
     height: var(--slide-height);
   }
 }
@@ -67,5 +69,11 @@
 
   .embla__slide {
     min-width: 0;
+  }
+}
+
+@media (max-height: 600px) {
+  .embla {
+    --slide-height: 16rem;
   }
 }

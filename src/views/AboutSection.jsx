@@ -37,7 +37,7 @@ export default function AboutSection({ direction }) {
   ]
 
   return (
-    <div className="pl-10 pr-10 pt-48 sm:pt-56 pb-24 w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent flex flex-col items-center justify-start text-zinc-900 dark:text-white transition-colors duration-300">
+    <div className="pl-10 pr-10 space-top-section pb-24 w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent flex flex-col items-center justify-start text-zinc-900 dark:text-white transition-colors duration-300">
       <motion.h1
         className="text-5xl font-bold mb-10 self-center"
         initial={{ opacity: 0, y: direction > 0 ? 50 : -50 }}

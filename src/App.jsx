@@ -8,6 +8,7 @@ import ProjectSection from "./views/ProjectSection";
 import GlowButton from "./components/GlowButton";
 import Background from "./components/Background";
 import { useTheme } from "./utils/AppThemeController";
+import { motion } from "motion/react";
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
@@ -60,8 +61,7 @@ export default function App() {
 
       {page < numberPages - 1 && (
         <GlowButton
-          className="btn-back-continue bottom-6 fixed
-          sm:bottom-10"
+          className="btn-back-continue fixed btn-continue"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.5 }}
@@ -73,7 +73,7 @@ export default function App() {
 
       {page > 0 && (
         <GlowButton
-          className="btn-back-continue top-28 sm:top-32 fixed"
+          className="btn-back-continue fixed btn-back"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}

@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import WheelGesturesPlugin from 'embla-carousel-wheel-gestures'
+import ProjectCard from './ProjectCard'
 
 const Carousel = (props) => {
     const { slides, options } = props
@@ -15,12 +16,12 @@ const Carousel = (props) => {
         <div className="embla">
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {slides.map((index) => (
+                    {slides.map((p, index) => (
                         <div className="m-2 embla__slide" key={index}>
                             <div className="embla__content">
-                                <div className="embla__slide__number">
-                                    <span>{index + 1}</span>
-                                </div>
+                                <div className="embla__slide__content">
+                                    <ProjectCard project={p} />
+                                </div>  
                             </div>
                         </div>
                     ))}

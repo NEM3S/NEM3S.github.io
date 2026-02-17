@@ -15,9 +15,12 @@ function useAnimationFrame(callback) {
 
 function useMousePositionRef(containerRef) {
   const positionRef = useRef({ x: 0, y: 0 });
+  const hasMovedRef = useRef(false);
 
   useEffect(() => {
     const updatePosition = (x, y) => {
+      hasMovedRef.current = true;
+
       if (containerRef?.current) {
         const rect = containerRef.current.getBoundingClientRect();
         positionRef.current = { x: x - rect.left, y: y - rect.top };
@@ -26,21 +29,22 @@ function useMousePositionRef(containerRef) {
       }
     };
 
-    const handleMouseMove = ev => updatePosition(ev.clientX, ev.clientY);
-    const handleTouchMove = ev => {
+    const handleMouseMove = (ev) => updatePosition(ev.clientX, ev.clientY);
+    const handleTouchMove = (ev) => {
       const touch = ev.touches[0];
       updatePosition(touch.clientX, touch.clientY);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
+
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, [containerRef]);
 
-  return positionRef;
+  return { positionRef, hasMovedRef };
 }
 
 const VariableProximity = forwardRef((props, ref) => {
@@ -59,7 +63,7 @@ const VariableProximity = forwardRef((props, ref) => {
 
   const letterRefs = useRef([]);
   const interpolatedSettingsRef = useRef([]);
-  const mousePositionRef = useMousePositionRef(containerRef);
+  const { positionRef: mousePositionRef, hasMovedRef } = useMousePositionRef(containerRef);
   const lastPositionRef = useRef({ x: null, y: null });
 
   const parsedSettings = useMemo(() => {
@@ -101,6 +105,16 @@ const VariableProximity = forwardRef((props, ref) => {
 
   useAnimationFrame(() => {
     if (!containerRef?.current) return;
+
+    if (!hasMovedRef.current) {
+      letterRefs.current.forEach((letterRef) => {
+        if (letterRef) {
+          letterRef.style.fontVariationSettings = fromFontVariationSettings;
+        }
+      });
+      return;
+    }
+
     const { x, y } = mousePositionRef.current;
     if (lastPositionRef.current.x === x && lastPositionRef.current.y === y) {
       return;
@@ -150,7 +164,7 @@ const VariableProximity = forwardRef((props, ref) => {
       onClick={onClick}
       style={{
         display: 'inline',
-        fontFamily: '"Roboto Flex", sans-serif',
+        fontFamily: '"Outfit", sans-serif',
         ...style
       }}
       className={className}

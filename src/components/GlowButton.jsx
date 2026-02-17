@@ -19,6 +19,9 @@ export default function GlowButton({ children, onClick, className = "" }) {
       className={`btn group overflow-hidden active:grayscale ${className}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.5, duration: 0.5 }}
       onMouseMove={handleMove}
     >
       {/* Glow animé */}

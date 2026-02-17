@@ -1,16 +1,12 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 
 @font-face {
   font-family: DMSans;
   src: url(../../public/assets/DMSans.ttf);
-}
-
-
-.variable-proximity {
-  font-family: 'Roboto Flex', sans-serif;
 }
 
 .sr-only {
@@ -64,6 +60,17 @@ body {
            shadow-sm active:scale-95 backdrop-blur-[7px];
   }
 
+  .space-top-section {
+    @apply pt-48 sm:pt-56;
+  }
+
+  .btn-continue {
+    @apply bottom-6 sm:bottom-10;
+  }
+  .btn-back {
+    @apply top-28 sm:top-32;
+  }
+
   .studies-li{
     @apply flex justify-center items-center sm:justify-between flex-col sm:flex-row relative bg-transparent backdrop-blur-[1px] border border-zinc-800 rounded-xl p-6 w-full text-left shadow-md;
   }
@@ -75,6 +82,21 @@ body {
     @apply text-zinc-600 dark:text-zinc-400 text-sm;
   }
 
-  @media screen and (height < 700px) {
+  @media screen and (height < 600px) {
+    .btn-continue {
+      @apply top-4 right-6;
+    }
+
+    .btn-back {
+      @apply top-4 left-6;
+    }
+
+    header {
+      visibility: collapse;
+    }
+
+    .space-top-section {
+      @apply pt-24;
+    }
   }
 }
