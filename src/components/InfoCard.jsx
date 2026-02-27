@@ -2,15 +2,6 @@ import { delay } from "motion";
 import { motion } from "motion/react";
 
 export default function InfoCard({ title, children }) {
-  const container = {
-    hidden: {},
-    visible: {
-      transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.05
-      },
-    },
-  };
   return (
     <motion.div initial={{ opacity: 0, y: 50 }}
       className="w-full mb-4"
@@ -21,7 +12,6 @@ export default function InfoCard({ title, children }) {
         y: { duration: 1, ease: "easeInOut", delay: 1 }
       }}>
       <motion.div
-        variants={container}
         initial="hidden"
         animate="visible"
         className="group relative bg-transparent backdrop-blur-lg z-10 border border-zinc-400 dark:border-zinc-600 rounded-xl p-6 text-left shadow-md dark:shadow-zinc-500/10 overflow-hidden"

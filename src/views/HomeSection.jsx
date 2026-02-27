@@ -55,7 +55,7 @@ export default function HomeSection() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
       >
-        Développeur .NET
+        Développeur full stack
       </motion.p>
     </div>
   );

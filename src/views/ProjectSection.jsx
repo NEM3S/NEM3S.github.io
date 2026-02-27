@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Carousel from "../components/Carousel";
 
@@ -7,44 +8,53 @@ export default function ProjectSection({ direction }) {
     const SLIDE_COUNT = 4
     const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
+    const [hoveredIndex, setHoveredIndex] = useState(null);
     const PROJECTS = [
     {
       title: "VALORez",
       description:
-        "Outil permettant de corriger VALORANT pour les résolutions étirées",
+        "Outil permettant de corriger VALORANT pour les résolutions étirées.",
       period: "2023 - Maintenant",
-      tags: ["/assets/skills/languages/C_sharp.svg", "/assets/skills/frameworks/spectre_console.svg"],
+      languages: ["/assets/skills/languages/C_sharp.svg", "/assets/skills/frameworks/spectre_console.svg", "/assets/skills/tools/Git_icon.svg"],
       onMore: () => {},
     },
     {
       title: "VALORankRadar",
       description:
-        "Outil permettant de visualiser les statistiques des joueurs sur VALORANT",
+        "Outil permettant de visualiser les statistiques des joueurs sur VALORANT.",
       period: "2025 - Maintenant",
-      tags: ["/assets/skills/languages/C_sharp.svg", "/assets/skills/frameworks/wpf_logo.svg"],
+      languages: ["/assets/skills/languages/C_sharp.svg", "/assets/skills/frameworks/wpf_logo.svg", "/assets/skills/tools/Git_icon.svg"],
       onMore: () => {},
     },
     {
       title: "audiodgFixer",
       description:
-        "Outil permettant de corriger audiodg.exe (Isolation graphique de périphérique audio Windows) pour les cartes son virtuelles",
+        "Outil permettant de corriger audiodg.exe (Isolation graphique de périphérique audio Windows) pour les cartes son virtuelles.", 
       period: "2024",
-      tags: ["/assets/skills/languages/PowerShell.svg"],
+      languages: ["/assets/skills/languages/PowerShell.svg"],
+      onMore: () => {},
+    },
+    {
+      title: "RDS",
+      description:
+        "Site web pour rechercher et proposer des recettes de saison.",
+      period: "2025 - 2026",
+      languages: ["/assets/skills/frameworks/angular-icon.svg", "/assets/skills/frameworks/dotnet_logo.svg", "/assets/skills/frameworks/aspnet-logo.svg", "/assets/skills/tools/sqlite.svg", "/assets/skills/tools/vp_logo.png", "/assets/skills/tools/docker_logo.svg","/assets/skills/tools/Git_icon.svg"], 
       onMore: () => {},
     },
     {
       title: "Portfolio v1",
       description:
-        "Mon premier portfolio",
+        "Mon premier portfolio. Découverte de React et Tailwind CSS, ainsi que Motion.",
       period: "2026 - Maintenant",
-      tags: ["/assets/skills/frameworks/react.svg", "/assets/skills/frameworks/Tailwind_Logo.svg"],
+      languages: ["/assets/skills/frameworks/react.svg", "/assets/skills/frameworks/Tailwind_Logo.svg", "/assets/skills/tools/Vite_Logo_2026.svg", "/assets/skills/tools/Git_icon.svg"], 
       onMore: () => {},
     },
   ];
 
     const [emblaRef, emblaApi] = useEmblaCarousel();
     return (
-        <div className="flex flex-col space-top-section pb-24 w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent  text-zinc-900 dark:text-white transition-colors duration-300">
+        <div className="flex flex-col space-top-section w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent  text-zinc-900 dark:text-white transition-colors duration-300">
             <div className="pl-10 pr-10 mb-2 flex flex-col items-center justify-start">
                 <motion.h1
                     className="text-5xl font-bold mb-10 self-center"
@@ -65,7 +75,7 @@ export default function ProjectSection({ direction }) {
                     Quelques-unes de mes dernières créations.
                 </motion.p>
             </div>
-            <Carousel slides={PROJECTS} options={OPTIONS} />
+            <Carousel slides={PROJECTS} options={OPTIONS} hoveredIndex={hoveredIndex} setHoveredIndex={setHoveredIndex}/>
         </div>
     );
 }

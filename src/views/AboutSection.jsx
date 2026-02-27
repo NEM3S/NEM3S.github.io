@@ -31,13 +31,14 @@ export default function AboutSection({ direction }) {
 
   const tools = [
     new Skill("/assets/skills/tools/Git_icon.svg", "Git", "orange", "h-10", true),
+    new Skill("/assets/skills/tools/Vite_Logo_2026.svg", "Vite", "purple", "h-7"),
     new Skill("/assets/skills/tools/docker_logo.svg", "Docker", "blue", "h-8"),
     new Skill("/assets/skills/tools/vp_logo.png", "Visual Paradigm", "red", "h-9"),
     new Skill("/assets/skills/tools/Figma-logo.svg", "Figma", "fuchsia", "h-8"),
   ]
 
   return (
-    <div className="pl-10 pr-10 space-top-section pb-24 w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent flex flex-col items-center justify-start text-zinc-900 dark:text-white transition-colors duration-300">
+    <div className="pl-10 pr-10 space-top-section w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent flex flex-col items-center justify-start text-zinc-900 dark:text-white transition-colors duration-300">
       <motion.h1
         className="text-5xl font-bold mb-10 self-center"
         initial={{ opacity: 0, y: direction > 0 ? 50 : -50 }}
@@ -90,7 +91,7 @@ export default function AboutSection({ direction }) {
       </motion.p>
 
 
-      <div className="flex flex-col gap-6 justify-center items-center w-full max-w-[800px] mb-10">
+      <div className="flex flex-col gap-6 justify-center items-center w-full max-w-[800px]">
 
 
         <InfoCard
