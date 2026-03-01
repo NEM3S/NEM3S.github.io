@@ -3,9 +3,24 @@ import InfoCard from "../components/InfoCard";
 import Skill from "../models/Skill";
 import SkillCard from "../components/SkillCard";
 import ExperienceTimeline from "../components/ExperienceTimeline";
-import { delay } from "motion";
+import { ReactLenis } from 'lenis/react';
+import { cancelFrame, frame } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 export default function AboutSection({ direction }) {
+
+  const lenisRef = useRef(null)
+
+  useEffect(() => {
+    function update(data) {
+      const time = data.timestamp
+      lenisRef.current?.lenis?.raf(time)
+    }
+
+    frame.update(update, true)
+
+    return () => cancelFrame(update)
+  }, [])
 
   const languages = [
     new Skill("/assets/skills/languages/C_sharp.svg", "C#", "purple", "h-10", true),
@@ -38,9 +53,9 @@ export default function AboutSection({ direction }) {
   ]
 
   return (
-    <div className="pl-10 pr-10 space-top-section w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent flex flex-col items-center justify-start text-zinc-900 dark:text-white transition-colors duration-300">
+    <ReactLenis options={{ autoRaf: false }} ref={lenisRef} className="pl-10 pr-10 space-top-section w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent flex flex-col items-center justify-start text-zinc-900 dark:text-white transition-colors duration-300">
       <motion.h1
-        className="text-5xl font-bold mb-10 self-center"
+        className="text-5xl font-bold mb-10 text-center"
         initial={{ opacity: 0, y: direction > 0 ? 50 : -50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: direction > 0 ? -50 : 50 }}
@@ -153,6 +168,6 @@ export default function AboutSection({ direction }) {
           </ul>
         </InfoCard>
       </div>
-    </div>
+    </ReactLenis >
   );
 }

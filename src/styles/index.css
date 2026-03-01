@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: DMSans;
-  src: url(../../public/assets/DMSans.ttf);
+  src: url(/assets/DMSans.ttf);
 }
 
 .sr-only {
@@ -38,13 +38,22 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --shine-color: oklch(62.3% 0.214 259.815);
-  --shine-color-text: #949494;
+  --shine-color-text: #6d6d6d;
 }
 
-html {
-  scroll-behavior: smooth;
-  scrollbar-width:none
+html.lenis {
+  height: auto;
 }
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
 
 body {
   margin: 0;
@@ -54,6 +63,7 @@ body {
   background-color: transparent;
   color: inherit;
 }
+
 
 @layer components {
 

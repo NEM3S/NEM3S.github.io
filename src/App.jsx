@@ -48,11 +48,18 @@ export default function App() {
   ];
 
   return (
-    <div className="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white overflow-hidden
-      relative w-full h-screen flex flex-col items-center justify-center transition-colors duration-300">
+    <div className="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white h-screen
+      relative overflow-hidden w-full flex flex-col items-center transition-colors duration-300">
       
-      <Background />
-
+      <motion.div
+        className="motion"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <Background />
+      </motion.div>
+      
       <Header theme={theme} onToggleTheme={toggleTheme} onPageChanged={onPageChanged}/>
 
       <AnimatePresence mode="popLayout" custom={direction}>
@@ -82,7 +89,6 @@ export default function App() {
           Retour
         </GlowButton>
       )}
-
     </div>
   );
 }

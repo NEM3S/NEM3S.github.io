@@ -43,13 +43,14 @@ export default function ProjectCard({ project,index,
                     className="inline-block overflow-visible leading-[1.1]"
                     />
                 </h3>
+                <h4 className="absolute right-10 font-black leading-[1] scale-125 opacity-5 sm:opacity-30 ml-4">{index + 1}</h4>
             </div>
-            <div>
-                <p className="p-6 max-w-[52ch] text-lg mr-2 ml-2 md:mr-10 md:ml-10 md:text-xl leading-relaxed dark:text-white text-black line-clamp-4 [@media(max-height:500px)]:p-4 [@media(max-height:500px)]:m-0">
+            <div className="h-full">
+                <p className="p-6 max-w-[52ch] text-lg mr-2 ml-2 md:mr-8 md:ml-8 md:text-xl font-light leading-relaxed dark:text-white text-black line-clamp-4 [@media(max-height:500px)]:p-4 [@media(max-height:500px)]:m-0">
                     {description}
                 </p>
             </div>
-            <div className="flex h-full flex-col p-4 sm:p-8 xl:pt-6 [@media(max-height:500px)]:p-4">
+            <div className="flex flex-col p-4 sm:p-6 xl:pt-6 bg-black/10 dark:bg-black/60 [@media(max-height:500px)]:p-4">
                 <div className="mt-auto flex flex-col items-start justify-between gap-4">
                     <div>
                         <p className="text-xl font-semibold dark:text-white/90 text-black/90 sm:block hidden [@media(max-height:500px)]:hidden">{period}</p>
@@ -62,15 +63,14 @@ export default function ProjectCard({ project,index,
                                     className="
                                     flex items-center justify-center
                                     rounded-md bg-black/15 dark:bg-white/15 w-11 h-11
-                                    text-sm font-medium"
+                                    text-sm font-medium border-2 border-black/30 dark:border-white/30"
                                 >
                                     <img src={l} className="p-2" />
                                 </span>
                             ))}
                         </div>
                         <div className="flex items-end">
-                            <button
-                                type="button"
+                            <div
                                 onClick={onMore}
                                 className="
                                 group inline-flex items-center gap-3
@@ -81,7 +81,7 @@ export default function ProjectCard({ project,index,
                                 <span className="text-lg transition group-hover:translate-x-0.5">
                                     ↗
                                 </span>
-                            </button>
+                            </div>
                         </div>
                     </div>
                 </div>
