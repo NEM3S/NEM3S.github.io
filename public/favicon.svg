@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <style>
     text {
-      fill: oklch(68.5% 0.169 237.323);
+      fill: oklch(62.3% 0.214 259.815);
       font-family: system-ui, -apple-system, sans-serif;
       font-weight: 800;
       letter-spacing: -1px;

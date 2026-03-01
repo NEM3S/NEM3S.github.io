@@ -24,6 +24,7 @@
 .dark {
   --shine-color: oklch(76.9% 0.188 70.08);
   --shine-color-text: #b2b2b2;
+  --intro-color: oklch(76.9% 0.188 70.08);
 }
 
 
@@ -39,6 +40,7 @@
   -moz-osx-font-smoothing: grayscale;
   --shine-color: oklch(62.3% 0.214 259.815);
   --shine-color-text: #6d6d6d;
+  --intro-color: oklch(62.3% 0.214 259.815);
 }
 
 html.lenis {
