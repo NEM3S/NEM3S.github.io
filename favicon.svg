@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    text {
+      fill: oklch(62.3% 0.214 259.815);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      text {
+        fill: oklch(76.9% 0.188 70.08);
+      }
+    }
+  </style>
+
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="40">
+    MH
+  </text>
+</svg>
