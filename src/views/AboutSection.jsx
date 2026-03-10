@@ -64,7 +64,7 @@ export default function AboutSection({ direction }) {
         À propos de moi
       </motion.h1>
       <motion.p
-        className="text-zinc-700 dark:text-gray-300 mb-4 text-left max-w-[750px]"
+        className="text-zinc-700 dark:text-gray-300 mb-4 text-left max-w-[750px] text-lg"
         initial={{ opacity: 0, y: direction > 0 ? 50 : -50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: direction > 0 ? -50 : 50 }}
@@ -74,7 +74,7 @@ export default function AboutSection({ direction }) {
         développement logiciel et le reverse engineering.
       </motion.p>
       <motion.p
-        className="text-zinc-700 dark:text-gray-300 mb-4 text-left max-w-[750px]"
+        className="text-zinc-700 dark:text-gray-300 mb-4 text-left max-w-[750px] text-lg"
         initial={{ opacity: 0, y: direction > 0 ? 50 : -50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: direction > 0 ? -50 : 50 }}
@@ -84,7 +84,7 @@ export default function AboutSection({ direction }) {
         programmation bas niveau, en conception <b>SOLID</b> ou en développement web.
       </motion.p>
       <motion.p
-        className="text-zinc-700 dark:text-gray-300 mb-4 text-left max-w-[750px]"
+        className="text-zinc-700 dark:text-gray-300 mb-4 text-left max-w-[750px] text-lg"
         initial={{ opacity: 0, y: direction > 0 ? 50 : -50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: direction > 0 ? -50 : 50 }}
@@ -94,7 +94,7 @@ export default function AboutSection({ direction }) {
         apprendre de nouvelles technologies et perfectionner mes projets personnels.
       </motion.p>
       <motion.p
-        className="text-zinc-700 dark:text-gray-300 mb-10 text-left max-w-[750px]"
+        className="text-zinc-700 dark:text-gray-300 mb-10 text-left max-w-[750px] text-lg"
         initial={{ opacity: 0, y: direction > 0 ? 50 : -50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: direction > 0 ? -50 : 50 }}

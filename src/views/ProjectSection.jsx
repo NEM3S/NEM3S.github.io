@@ -3,8 +3,23 @@ import { useState, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import MouseIndicator from "../components/MouseIndicator";
 import Carousel from "../components/Carousel";
+import { ReactLenis } from 'lenis/react';
+import { cancelFrame, frame } from 'framer-motion';
 
 export default function ProjectSection({ direction }) {
+  const lenisRef = useRef(null)
+
+  useEffect(() => {
+    function update(data) {
+      const time = data.timestamp
+      lenisRef.current?.lenis?.raf(time)
+    }
+
+    frame.update(update, true)
+
+    return () => cancelFrame(update)
+  }, [])
+
   const OPTIONS = { loop: true };
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -93,7 +108,7 @@ export default function ProjectSection({ direction }) {
 
   const [emblaRef, emblaApi] = useEmblaCarousel();
   return (
-    <div className="flex flex-col space-top-section w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent  text-zinc-900 dark:text-white transition-colors duration-300">
+    <ReactLenis options={{ autoRaf: false }} ref={lenisRef} className="flex flex-col space-top-section w-full overflow-y-auto overflow-x-hidden min-h-screen bg-transparent  text-zinc-900 dark:text-white transition-colors duration-300">
       <div className="pl-10 pr-10 mb-2 flex flex-col items-center justify-start">
         <motion.h1
           className="text-5xl font-bold mb-10 self-center"
@@ -105,7 +120,7 @@ export default function ProjectSection({ direction }) {
           Mes projets
         </motion.h1>
         <motion.p
-          className="text-zinc-700 dark:text-gray-300 mb-4 text-left max-w-[750px]"
+          className="text-zinc-700 dark:text-gray-300 mb-4 text-left max-w-[750px] text-lg"
           initial={{ opacity: 0, y: direction > 0 ? 50 : -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: direction > 0 ? -50 : 50 }}
@@ -134,6 +149,6 @@ export default function ProjectSection({ direction }) {
 
       </div>
       <Carousel slides={PROJECTS} options={OPTIONS} hoveredIndex={hoveredIndex} setHoveredIndex={setHoveredIndex}/>
-    </div>
+    </ReactLenis>
   );
 }

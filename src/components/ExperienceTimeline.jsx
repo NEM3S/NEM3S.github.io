@@ -39,7 +39,7 @@ export default function ExperienceTimeline() {
                 {exp.date}
               </p>
               {exp.description.map((desc, i) => (
-                <p key={i} className="text-zinc-600 dark:text-zinc-400 text-sm mt-2">
+                <p key={i} className="text-zinc-600 dark:text-zinc-400 text-md mt-2">
                   {desc}
                 </p>
               ))}

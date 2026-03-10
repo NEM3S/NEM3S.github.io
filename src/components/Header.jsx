@@ -2,8 +2,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { div } from "framer-motion/client";
 
-export default function Header({ theme, onToggleTheme, onPageChanged }) {
+export default function Header({ theme, onToggleTheme, onPageChanged, currentPage }) {
   const [open, setOpen] = useState(false);
+
+  const navLinkClass = (pageIndex) =>
+  `transition-colors ${
+    currentPage === pageIndex
+      ? "text-blue-500 dark:text-orange-400 cursor-pointer"
+      : "text-zinc-700 dark:text-white hover:text-blue-500 dark:hover:text-orange-400 cursor-pointer"
+  }`;
 
   useEffect(() => {
     const onResize = () => {
@@ -29,23 +36,20 @@ export default function Header({ theme, onToggleTheme, onPageChanged }) {
         {/* NAV DESKTOP */}
         <nav className="hidden sm:flex self-center items-center justify-center gap-5 lg:gap-12 py-4 text-lg sm:text-xl font-medium text-zinc-700 dark:text-white">
           <a
-            href="#about"
             onClick={() => handleNavClick(1)}
-            className="hover:text-blue-500 dark:hover:text-orange-400 transition-colors"
+            className={navLinkClass(1)}
           >
             À Propos
           </a>
           <a
-            href="#projects"
             onClick={() => handleNavClick(2)}
-            className="hover:text-blue-500 dark:hover:text-orange-400 transition-colors"
+            className={navLinkClass(2)}
           >
             Projets
           </a>
           <a
-            href="#contact"
             onClick={() => handleNavClick(3)}
-            className="hover:text-blue-500 dark:hover:text-orange-400 transition-colors"
+            className={navLinkClass(3)}
           >
             Contact
           </a>
@@ -79,12 +83,11 @@ export default function Header({ theme, onToggleTheme, onPageChanged }) {
 
       {/* TOGGLE THEME (inchangé) */}
       <div className="absolute right-6">
-        <input class="peer sr-only" id="theme" type="checkbox"
+        <input className="peer sr-only input" id="theme" type="checkbox"
               defaultChecked={theme !== "dark"}
-              className="input"
               onClick={onToggleTheme} />
 
-        <label for="theme" class="theme-toggle" data-light="light" data-dark="dark">
+        <label htmlFor="theme" className="theme-toggle" data-light="light" data-dark="dark">
           <svg id="light" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
@@ -110,23 +113,20 @@ export default function Header({ theme, onToggleTheme, onPageChanged }) {
           >
             <nav className="flex flex-col py-2 text-lg font-medium text-zinc-700 dark:text-white">
               <a
-                href="#about"
                 onClick={() => handleNavClick(1)}
-                className="px-6 py-3 hover:bg-zinc-200/40 dark:hover:bg-white/10 transition-colors"
+                className={`${navLinkClass(1)} px-6 py-3 hover:bg-zinc-200/40 dark:hover:bg-white/10 transition-colors`}
               >
                 À Propos
               </a>
               <a
-                href="#projects"
                 onClick={() => handleNavClick(2)}
-                className="px-6 py-3 hover:bg-zinc-200/40 dark:hover:bg-white/10 transition-colors"
+                className={`${navLinkClass(2)} px-6 py-3 hover:bg-zinc-200/40 dark:hover:bg-white/10 transition-colors`}
               >
                 Projets
               </a>
               <a
-                href="#contact"
                 onClick={() => handleNavClick(3)}
-                className="px-6 py-3 hover:bg-zinc-200/40 dark:hover:bg-white/10 transition-colors"
+                className={`${navLinkClass(3)} px-6 py-3 hover:bg-zinc-200/40 dark:hover:bg-white/10 transition-colors`}
               >
                 Contact
               </a>

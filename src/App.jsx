@@ -60,7 +60,7 @@ export default function App() {
         <Background />
       </motion.div>
       
-      <Header theme={theme} onToggleTheme={toggleTheme} onPageChanged={onPageChanged}/>
+      <Header theme={theme} onToggleTheme={toggleTheme} onPageChanged={onPageChanged} currentPage={page}/>
 
       <AnimatePresence mode="popLayout" custom={direction}>
         {pages[page]}

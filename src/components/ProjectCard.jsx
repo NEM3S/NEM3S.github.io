@@ -50,7 +50,7 @@ export default function ProjectCard({ project,index,
                     {description}
                 </p>
             </div>
-            <div className="flex flex-col p-4 sm:p-6 xl:pt-6 bg-black/10 dark:bg-black/60 [@media(max-height:500px)]:p-4">
+            <div className="flex flex-col p-4 sm:p-6 xl:pt-6 bg-white/70 dark:bg-black/60 [@media(max-height:500px)]:p-4">
                 <div className="mt-auto flex flex-col items-start justify-between gap-4">
                     <div>
                         <p className="text-xl font-semibold dark:text-white/90 text-black/90 sm:block hidden [@media(max-height:500px)]:hidden">{period}</p>
@@ -62,8 +62,8 @@ export default function ProjectCard({ project,index,
                                     key={l}
                                     className="
                                     flex items-center justify-center
-                                    rounded-md bg-black/15 dark:bg-white/15 w-11 h-11
-                                    text-sm font-medium border-2 border-black/30 dark:border-white/30"
+                                    rounded-md bg-zinc-500/10 dark:bg-white/15 w-11 h-11
+                                    text-sm font-medium border-2 border-black/15 dark:border-white/30"
                                 >
                                     <img src={l} className="p-2" />
                                 </span>

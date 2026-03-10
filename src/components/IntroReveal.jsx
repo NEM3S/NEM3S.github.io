@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-export default function IntroReveal({ targetRef, playKey }) {
+export default function IntroReveal({ targetRef }) {
   const overlayRef = useRef(null);
   const [origin, setOrigin] = useState(null);
 
@@ -27,12 +27,11 @@ export default function IntroReveal({ targetRef, playKey }) {
     }, 100);
 
     return () => clearTimeout(t);
-  }, [targetRef, playKey]);
+  }, [targetRef] );
 
   return (
     <motion.div
       ref={overlayRef}
-      key={playKey}
       className="fixed inset-0 z-[9999] pointer-events-none"
       style={{ background: "var(--intro-color)" }}
       initial={{ clipPath: initialClip }}
